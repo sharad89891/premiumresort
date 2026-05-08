@@ -10,6 +10,7 @@ const Hero = () => {
         loop 
         playsInline 
         className={styles.videoBackground}
+        poster="/images/gallery/night_resort.png"
       >
         <source src="/homepagevideo.mp4" type="video/mp4" />
       </video>
