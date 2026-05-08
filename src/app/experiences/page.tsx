@@ -225,7 +225,7 @@ export default function Experiences() {
                 <span className={styles.dayName}>{act.day}</span>
                 <div className={styles.dayEvent}>
                   <strong>{act.event}</strong>
-                  <span>{act.time}</span>
+                  <span className={styles.eventTime}>{act.time}</span>
                 </div>
               </div>
             ))}

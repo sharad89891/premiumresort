@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './page.module.css';
 import { Reveal } from '@/components/common/Reveal';
@@ -19,6 +20,12 @@ const galleryItems = [
 const categories = ['ALL', 'ARCHITECTURE', 'LIFESTYLE', 'NATURE'];
 
 export default function Gallery() {
+  const [activeFilter, setActiveFilter] = useState('ALL');
+
+  const filteredItems = activeFilter === 'ALL' 
+    ? galleryItems 
+    : galleryItems.filter(item => item.category === activeFilter);
+
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
@@ -36,25 +43,33 @@ export default function Gallery() {
         <div className="container">
           <div className={styles.filterBar}>
             {categories.map((cat, i) => (
-              <button key={i} className={i === 0 ? styles.activeFilter : styles.filterBtn}>
+              <button 
+                key={i} 
+                className={activeFilter === cat ? styles.activeFilter : styles.filterBtn}
+                onClick={() => setActiveFilter(cat)}
+              >
                 {cat}
               </button>
             ))}
           </div>
 
           <div className={styles.grid}>
-            {galleryItems.map((item, index) => (
-              <Reveal key={item.id} delay={index * 0.05}>
-                <div className={styles.item}>
-                  <div className={styles.imageWrapper}>
-                    <Image src={item.image} alt={item.title} fill style={{ objectFit: 'cover' }} />
-                    <div className={styles.overlay}>
-                      <span className={styles.itemCat}>{item.category}</span>
-                      <h3 className={styles.itemTitle}>{item.title}</h3>
-                    </div>
+            {filteredItems.map((item, index) => (
+              <div key={item.id} className={styles.item}>
+                <div className={styles.imageWrapper}>
+                  <Image 
+                    src={item.image} 
+                    alt={item.title} 
+                    fill 
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  <div className={styles.overlay}>
+                    <span className={styles.itemCat}>{item.category}</span>
+                    <h3 className={styles.itemTitle}>{item.title}</h3>
                   </div>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>
