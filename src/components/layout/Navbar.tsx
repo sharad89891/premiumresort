@@ -8,12 +8,8 @@ import Logo from '../common/Logo';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [clickEffect, setClickEffect] = useState(false);
   const pathname = usePathname();
-
-  const isHome = pathname === '/';
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,20 +19,8 @@ const Navbar = () => {
     };
     handleResize();
     window.addEventListener('resize', handleResize);
-    
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleResize);
-    };
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const showSolid = isMobile || !isHome || scrolled || isOpen;
-  const isLightLogo = isHome && !scrolled && !isOpen && !isMobile;
 
   const navItems = [
     { name: 'Accommodations', path: '/accommodations' },
@@ -48,16 +32,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav 
-      className={`${styles.navbar} ${showSolid ? styles.solid : ''} ${isOpen ? styles.menuOpen : ''} ${clickEffect ? styles.clicked : ''}`}
-      style={{ 
-        backgroundColor: (isMobile || showSolid) ? '#ffffff' : 'transparent',
-        borderBottom: isMobile ? '1px solid rgba(15, 30, 64, 0.1)' : 'none'
-      }}
-    >
+    <nav className={`${styles.navbar} ${isOpen ? styles.menuOpen : ''}`}>
       <div className={`${styles.container} container`}>
         <Link href="/" className={styles.logoLink} onClick={() => setIsOpen(false)}>
-          <Logo light={isLightLogo} />
+          <Logo light={false} />
         </Link>
         
         <ul className={`${styles.navLinks} ${isOpen ? styles.active : ''}`}>
@@ -85,23 +63,12 @@ const Navbar = () => {
 
         <button 
           className={`${styles.hamburger} ${isOpen ? styles.hamburgerActive : ''}`}
-          onClick={() => {
-            console.log("MOBILE MENU TOGGLE:", !isOpen);
-            setIsOpen(!isOpen);
-            setClickEffect(true);
-            setTimeout(() => setClickEffect(false), 300);
-          }}
+          onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          style={{ 
-            display: isMobile ? 'flex' : 'none',
-            padding: '10px',
-            background: 'rgba(15, 30, 64, 0.05)',
-            borderRadius: '5px'
-          }}
         >
-          <span style={{ backgroundColor: '#0f1e40', height: '2px', width: '25px', marginBottom: '5px' }}></span>
-          <span style={{ backgroundColor: '#0f1e40', height: '2px', width: '25px', marginBottom: '5px' }}></span>
-          <span style={{ backgroundColor: '#0f1e40', height: '2px', width: '25px' }}></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </nav>

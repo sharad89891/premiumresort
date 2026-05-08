@@ -3,19 +3,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   z-index: 1000;
   transition: var(--transition-smooth);
-  background: transparent;
-}
-
-/* Force solid on all sub-pages and when scrolled/open */
-.solid, .menuOpen {
-  background: var(--white) !important;
-  height: 70px;
-  box-shadow: 0 10px 30px rgba(15, 30, 64, 0.08);
+  background: var(--white); /* Always white */
+  box-shadow: 0 5px 20px rgba(15, 30, 64, 0.05);
 }
 
 .container {
@@ -32,11 +26,6 @@
   .container {
     padding: 0 1.5rem;
   }
-  
-  .navbar {
-    height: 70px;
-    background: var(--white) !important; /* Force white on mobile */
-  }
 }
 
 .logoLink {
@@ -48,47 +37,27 @@
 
 .navLinks {
   display: flex;
-  gap: 2rem;
-  margin: 0 1rem;
+  gap: 2.5rem;
+  margin: 0 2rem;
 }
 
 .navLinks li a {
   font-family: var(--font-accent);
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--primary); /* Always dark sapphire */
   opacity: 0.8;
   transition: var(--transition-smooth);
   white-space: nowrap;
   padding: 0.5rem 0;
 }
 
-/* Active Link Highlight */
 .activeLink {
   color: var(--accent-blue) !important;
   opacity: 1 !important;
   border-bottom: 2px solid var(--accent-blue);
-}
-
-.solid .navLinks li a, 
-.menuOpen .navLinks li a {
-  color: var(--primary);
-}
-
-/* Mobile specific link styles */
-@media (max-width: 1024px) {
-  .navLinks li a {
-    color: var(--primary) !important;
-    font-size: 1.2rem;
-    padding: 1rem 0;
-  }
-  
-  .activeLink {
-    border-bottom: none;
-    color: var(--accent-blue) !important;
-  }
 }
 
 .navLinks li a:hover {
@@ -99,11 +68,17 @@
 .bookBtn {
   background: var(--accent);
   color: var(--white);
-  padding: 0.7rem 1.8rem;
+  padding: 0.8rem 2.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  font-size: 0.65rem;
+  letter-spacing: 0.2rem;
+  font-size: 0.7rem;
   font-weight: 700;
+  transition: var(--transition-smooth);
+}
+
+.bookBtn:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
 }
 
 .desktopOnly { display: block; }
@@ -112,31 +87,18 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 1100;
-  padding: 5px;
 }
 
 .hamburger span {
   width: 25px;
   height: 2px;
-  background: var(--white);
+  background: var(--primary); /* Always dark */
   transition: var(--transition-smooth);
-}
-
-.solid .hamburger span,
-.menuOpen .hamburger span {
-  background: var(--primary);
-}
-
-/* Always dark hamburger on mobile */
-@media (max-width: 1024px) {
-  .hamburger span {
-    background: var(--primary) !important;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -145,24 +107,27 @@
 
   .navLinks {
     position: fixed;
-    top: 70px;
+    top: 80px;
     right: -100%;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
     background: var(--white);
     flex-direction: column;
     justify-content: flex-start;
-    padding-top: 3rem;
+    padding-top: 4rem;
     align-items: center;
-    gap: 1.5rem;
-    transition: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    gap: 3rem;
+    transition: 0.4s ease-in-out;
     z-index: 1050;
-    overflow-y: auto;
-    box-shadow: none;
   }
 
   .navLinks.active {
     right: 0;
+  }
+
+  .activeLink {
+    border-bottom: none;
+    color: var(--accent-blue) !important;
   }
 
   .mobileOnly {
@@ -170,7 +135,7 @@
     margin-top: 1rem;
   }
 
-  .hamburgerActive span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburgerActive span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .hamburgerActive span:nth-child(2) { opacity: 0; }
-  .hamburgerActive span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .hamburgerActive span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
