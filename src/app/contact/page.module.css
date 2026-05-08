@@ -1,0 +1,223 @@
+.page {
+  background: var(--bg-light);
+}
+
+.hero {
+  padding: 8rem 0 6rem;
+  background: linear-gradient(rgba(15, 30, 64, 0.4), rgba(15, 30, 64, 0.4)), url('/images/contact_hero.png') center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--white);
+}
+
+.topSubtitle {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--white);
+}
+
+.hero h1 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.mainSection {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 6rem;
+}
+
+.formSide h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.formSide p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.1rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.form input, .form select, .form textarea {
+  padding: 1rem;
+  background: var(--bg-light);
+  border: 1px solid rgba(var(--primary-rgb), 0.05);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--primary);
+  transition: var(--transition-smooth);
+}
+
+.form input:focus, .form select:focus, .form textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  background: var(--white);
+}
+
+.submitBtn {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1.2rem;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submitBtn:hover {
+  background: var(--accent-blue);
+}
+
+.infoSide {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.infoCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoCard {
+  padding: 2rem;
+  background: var(--bg-light);
+  border-left: 2px solid var(--accent-blue);
+}
+
+.cardLabel {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.15rem;
+  color: var(--accent-blue);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.infoCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.infoCard p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.coords {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  display: block;
+  margin-top: 0.8rem;
+}
+
+.transferInfo h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.transferInfo p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* FAQ Section */
+.faq {
+  padding: 4rem 0;
+  background: var(--bg-light);
+}
+
+.faqHeader {
+  margin-bottom: 2.5rem;
+}
+
+.faqHeader h2 {
+  font-size: 4rem;
+}
+
+.faqHeader h2 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.faqItem h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+}
+
+.faqItem p {
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .mainContact .container {
+    flex-direction: column;
+    gap: 6rem;
+  }
+  
+  .inputGroup {
+    grid-template-columns: 1fr;
+  }
+}

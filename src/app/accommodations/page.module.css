@@ -1,0 +1,419 @@
+.page {
+  background: var(--bg-light);
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(rgba(15, 30, 64, 0.6), rgba(15, 30, 64, 0.6)), url('/images/penthouse.png') center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--white);
+}
+
+.topSubtitle {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--accent-blue);
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--white);
+}
+
+.hero h1 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.list {
+  padding: 3rem 0;
+}
+
+.roomRow {
+  display: flex;
+  align-items: stretch;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.05);
+}
+
+.roomRow:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+/* Column 1: Info */
+.infoCol {
+  flex: 1.5;
+}
+
+.roomSubtitle {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.roomName {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+.roomDescription {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.roomStats {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.statItem label {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  letter-spacing: 0.1rem;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.statItem p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* Column 2: Small Image */
+.imageCol {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.smallImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  box-shadow: 20px 20px 60px rgba(15, 30, 64, 0.08);
+}
+
+/* Column 3: Features */
+.featureCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 450px;
+}
+
+.colLabel {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1.5rem;
+  opacity: 0.4;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.featureList li {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.4;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.featureList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 1px;
+  background: var(--accent-blue);
+}
+
+.actionBlock {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.priceTag {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.priceTag span {
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  letter-spacing: 2px;
+}
+
+.exploreLink {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--white);
+  background: var(--primary);
+  padding: 1.2rem 2.5rem;
+  display: inline-block;
+  transition: var(--transition-smooth);
+}
+
+.exploreLink:hover {
+  background: var(--accent-blue);
+  transform: translateY(-3px);
+}
+
+/* Inclusions Section */
+.inclusions {
+  padding: 4rem 0;
+  background: var(--primary);
+  color: var(--white);
+}
+
+.inclusionsHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.inclusionsHeader h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.inclusionsHeader h2 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.inclusionsHeader p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  font-weight: 200;
+}
+
+.inclusionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.inclusion h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--accent-blue);
+}
+
+.inclusion p {
+  font-size: 1rem;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+/* Host Service Section */
+.hostService {
+  padding: 4rem 0;
+  background: var(--white);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.05);
+}
+
+.hostGrid {
+  display: flex;
+  align-items: stretch;
+  gap: 6rem;
+}
+
+.hostContent {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  margin-bottom: 1rem;
+  display: block;
+  text-transform: uppercase;
+}
+
+.hostContent h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.hostContent h2 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.hostContent p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.hostFeatures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.hostFeatures li {
+  font-size: 0.9rem;
+  color: var(--primary);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.hostFeatures li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-blue);
+  font-weight: bold;
+}
+
+.hostImage {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+
+/* Comforts Section */
+.comforts {
+  padding: 4rem 0;
+  background: var(--bg-light);
+}
+
+.comfortsHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.comfortsHeader h2 {
+  font-size: 3rem;
+}
+
+.comfortsHeader h2 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.comfortsGridContainer {
+  display: flex;
+  align-items: stretch;
+  gap: 6rem;
+}
+
+.comfortsImage {
+  flex: 1;
+  height: auto;
+  min-height: 400px;
+  position: relative;
+}
+
+.comfortsGrid {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.comfortItem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.comfortItem p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .roomRow {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+  
+  .infoCol {
+    flex: 100%;
+  }
+  
+  .imageCol, .featureCol {
+    flex: 1;
+  }
+
+  .hostGrid {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .hostImage {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .imageCol, .featureCol {
+    flex: 100%;
+  }
+  
+  .smallImageWrapper {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

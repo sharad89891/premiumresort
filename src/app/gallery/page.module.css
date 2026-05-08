@@ -1,0 +1,192 @@
+.page {
+  background: var(--bg-light);
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(rgba(15, 30, 64, 0.4), rgba(15, 30, 64, 0.4)), url('/images/gallery/night_resort.png') center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--white);
+}
+
+.topSubtitle {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.hero h1 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.gallerySection {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.filterBar {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.05);
+  padding-bottom: 1.5rem;
+}
+
+.filterBtn, .activeFilter {
+  background: none;
+  border: none;
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.activeFilter {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.filterBtn:hover {
+  color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-smooth);
+}
+
+.item:hover .imageWrapper {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 30, 64, 0.9), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.itemCat {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.5rem;
+}
+
+.itemTitle {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.instagram {
+  padding: 5rem 0;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.instaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.instaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.instaContent h2 span {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--accent-blue);
+}
+
+.instaContent p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: var(--white);
+  padding: 1.2rem 3rem;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.primaryBtn:hover {
+  background: var(--accent-blue);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .filterBar {
+    gap: 1rem;
+  }
+}

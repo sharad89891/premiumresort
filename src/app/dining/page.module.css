@@ -1,0 +1,285 @@
+.page {
+  background: var(--bg-light);
+}
+
+.hero {
+  padding: 6rem 0 4rem;
+  background: linear-gradient(rgba(15, 30, 64, 0.6), rgba(15, 30, 64, 0.6)), url('/images/dining_terrace.png') center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--white);
+}
+
+.topSubtitle {
+  font-family: var(--font-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: var(--accent-blue);
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.list {
+  padding: 3rem 0;
+}
+
+.venueGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.venueCard {
+  background: var(--white);
+  border: 1px solid rgba(var(--primary-rgb), 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.venueImage {
+  position: relative;
+  height: 200px; /* Reduced from 250px */
+  width: 100%;
+  overflow: hidden;
+}
+
+.venueContent {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.venueSubtitle {
+  font-family: var(--font-accent);
+  font-size: 0.6rem;
+  letter-spacing: 0.1rem;
+  color: var(--accent-blue);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.venueContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.description {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.signatureBox {
+  background: var(--bg-light);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-left: 2px solid var(--accent-blue);
+}
+
+.signatureBox label {
+  font-family: var(--font-accent);
+  font-size: 0.55rem;
+  color: var(--accent-blue);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.signatureBox p {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(var(--primary-rgb), 0.05);
+}
+
+.hours {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.reserveBtn {
+  font-family: var(--font-accent);
+  font-size: 0.7rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.destination {
+  padding: 5rem 0;
+  background: linear-gradient(rgba(15, 30, 64, 0.8), rgba(15, 30, 64, 0.8)), url('/images/dining.png') center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+}
+
+.destContent {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.destContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.primaryBtn {
+  background: var(--white);
+  color: var(--primary);
+  padding: 1rem 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.philosophy {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.philosophyImage {
+  position: relative;
+  height: 300px; /* Reduced from 350px */
+}
+
+.philosophyItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.philIcon {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--accent-blue);
+  opacity: 0.2;
+  margin-bottom: 1rem;
+}
+
+.calendar {
+  padding: 4rem 0;
+  background: var(--bg-light);
+}
+
+.calendarFlex {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.calendarImage {
+  position: relative;
+  height: 300px; /* Reduced from 350px */
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.eventCard {
+  background: var(--white);
+  padding: 1.5rem;
+  border-left: 2px solid var(--accent-blue);
+}
+
+.eventDay {
+  font-size: 0.6rem;
+  color: var(--accent-blue);
+  font-family: var(--font-accent);
+  letter-spacing: 0.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.wineCellar {
+  padding: 4rem 0;
+  background: var(--white);
+}
+
+.wineGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.wineImage {
+  position: relative;
+  height: 300px;
+}
+
+.wineStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.wStat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.wStat span {
+  font-size: 0.6rem;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-accent);
+  font-size: 0.65rem;
+  color: var(--accent-blue);
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .venueGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .philosophyGrid, .calendarFlex, .wineGrid {
+    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .philosophyImage, .calendarImage, .wineImage {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .venueGrid, .calendarGrid, .philosophyItems {
+    grid-template-columns: 1fr;
+  }
+}
