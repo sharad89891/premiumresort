@@ -240,7 +240,7 @@ export default function Experiences() {
               <span className={styles.sectionSubtitle}>BESPOKE SERVICE</span>
               <h2>Infinite <span>Possibilities</span></h2>
               <p>Your imagination is our only limit. Our concierge team is dedicated to crafting unique itineraries tailored to your deepest desires.</p>
-              <Link href="/contact" className={styles.primaryBtn}>Design Your Journey</Link>
+              <Link href="/contact" className={styles.bespokeBtn}>Design Your Journey</Link>
             </div>
           </Reveal>
         </div>

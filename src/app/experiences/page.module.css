@@ -178,7 +178,7 @@
 }
 
 .calendar {
-  padding: 5rem 0;
+  padding: 6rem 0;
   background: var(--white);
 }
 
@@ -194,10 +194,17 @@
 }
 
 .calDay {
-  padding: 1.5rem 1rem;
+  padding: 2.5rem 1rem;
   background: var(--bg-light);
   border-top: 3px solid var(--accent-blue);
   text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.calDay:hover {
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(15, 30, 64, 0.05);
+  transform: translateY(-5px);
 }
 
 .dayName {
@@ -206,21 +213,68 @@
   font-size: 0.8rem;
   color: var(--primary);
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
 }
 
 .dayEvent strong {
   display: block;
-  font-size: 0.85rem;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+  color: var(--primary);
 }
 
 .eventTime {
   font-family: var(--font-accent);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--accent-blue);
   font-weight: 700;
+}
+
+/* Bespoke Section - REVAMPED */
+.bespoke {
+  padding: 10rem 0;
+  background: linear-gradient(rgba(15, 30, 64, 0.7), rgba(15, 30, 64, 0.7)), url('/images/sandbank.png') center/cover no-repeat fixed;
+  color: var(--white);
+  text-align: center;
+}
+
+.bespokeHeader {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.bespokeHeader h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin-bottom: 2rem;
+}
+
+.bespokeHeader p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 3.5rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.bespokeBtn {
+  background: var(--white);
+  color: var(--primary);
+  padding: 1.5rem 4rem;
+  font-family: var(--font-accent);
+  font-weight: 700;
+  letter-spacing: 0.3rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: var(--transition-smooth);
+  display: inline-block;
+}
+
+.bespokeBtn:hover {
+  background: var(--accent-blue);
+  color: var(--white);
+  transform: scale(1.05);
 }
 
 @media (max-width: 1024px) {
@@ -234,10 +288,16 @@
   .calendarFlex {
     grid-template-columns: repeat(4, 1fr);
   }
+  .bespoke {
+    padding: 6rem 0;
+  }
 }
 
 @media (max-width: 768px) {
   .catGrid, .expGrid, .calendarFlex {
     grid-template-columns: 1fr;
+  }
+  .bespokeHeader p {
+    font-size: 1rem;
   }
 }
