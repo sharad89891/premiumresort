@@ -1,5 +1,6 @@
-import styles from './Hero.module.css';
+import Link from 'next/link';
 import { Reveal } from '@/components/common/Reveal';
+import styles from './Hero.module.css';
 
 const Hero = () => {
   return (
@@ -26,8 +27,12 @@ const Hero = () => {
         </Reveal>
         <Reveal delay={0.6}>
           <div className={styles.actions}>
-            <button className={styles.primaryBtn}>Reserve Your Journey</button>
-            <button className={styles.secondaryBtn}>Explore the Film</button>
+            <Link href="/contact" className={styles.primaryBtn}>
+              Reserve Your Journey
+            </Link>
+            <Link href="/gallery" className={styles.secondaryBtn}>
+              Explore the Film
+            </Link>
           </div>
         </Reveal>
       </div>
